@@ -33,21 +33,39 @@
       transition: background 0.3s, box-shadow 0.3s;
     }
     header.scrolled {
-      background: rgba(255,255,255,0.97);
+      background: rgba(255, 255, 255, 0.776);
       box-shadow: 0 6px 24px rgba(31,121,96,0.10);
       border-bottom: none;
     }
     .logo {
+      display: flex;
+      align-items: center;
       font-weight: 700;
       font-size: 1.5rem;
       color: #000000;
       letter-spacing: 1px;
+      gap: 0.5rem;
+    }
+    .logo img {
+      height: 2.1rem;
+      width: auto;
+      display: inline-block;
+      vertical-align: middle;
     }
     nav a {
       text-decoration: none;
+      color: #132D46;
+      font-weight: 500;
+      margin-left: 2rem;
+      transition: color 0.3s ease;
+      font-size: 1rem;
+    }
+    nav a:hover {
+      color: #00C18C;
+    }
+    nav a.cta-button {
       color: #FFFFFF;
       font-weight: 700;
-      margin-left: 2rem;
       padding: 0 20px;
       height: 40px;
       line-height: 40px;
@@ -57,9 +75,8 @@
       border-radius: 8px;
       background: #1F7960;
       transition: all 0.2s;
-      font-size: 1rem;
     }
-    nav a:hover {
+    nav a.cta-button:hover {
       background: #01C38D;
       color: #FFFFFF;
       transform: translateY(-1px);
@@ -76,6 +93,31 @@
       align-items: center;
       gap: 64px;
       min-height: 450px;
+      position: relative;
+      z-index: 1;
+    }
+    .gradient-blur {
+      position: absolute;
+      bottom: -50px;
+      left: -50px;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, #1F7960 0%, transparent 80%);
+      filter: blur(100px);
+      z-index: 0;
+      pointer-events: none;
+    }
+    .gradient-blur.top-right {
+      position: absolute;
+      top: -50px;
+      right: -50px;
+      left: auto;
+      width: 180px;
+      height: 180px;
+      background: radial-gradient(circle, #1F7960 0%, transparent 80%);
+      filter: blur(100px);
+      z-index: 0;
+      pointer-events: none;
     }
     .hero-content {
       flex: 1 1 320px;
@@ -83,11 +125,11 @@
       text-align: left;
     }
     .hero-title {
-      font-size: 48px;
+      font-size: 42px;
       font-weight: 700;
-      color: #000000;
+      color: #113d65;
       margin-bottom: 1rem;
-      line-height: 1.2;
+      line-height: 1.1;
     }
     .hero-desc {
       font-size: 18px;
@@ -95,9 +137,9 @@
       color: #666666;
     }
     .form-card {
-      background: #fff;
-      border-radius: 16px;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      background: radial-gradient(circle at 25% 20%, #1F7960 0%, rgba(10,45,78,0.95) 70%), rgb(10, 45, 78);
+      border-radius: 8px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2), 0 8px 32px #01c38c44;
       padding: 32px;
       max-width: 450px;
       min-width: 340px;
@@ -105,6 +147,24 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid #113c6521;
+    }
+    .form-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(255,255,255,0.07);
+      pointer-events: none;
+      z-index: 0;
+      border-radius: 8px;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+    .form-card > * {
+      position: relative;
+      z-index: 1;
     }
     .signup-form {
       background: transparent;
@@ -119,7 +179,7 @@
       display: block;
       margin-bottom: 0.5rem;
       font-weight: 600;
-      color: #000000;
+      color: #fff;
     }
     .signup-form input {
       width: 100%;
@@ -129,6 +189,12 @@
       border-radius: 12px;
       font-size: 16px;
       box-sizing: border-box;
+      background: #113c65c4;
+      color: #fff;
+    }
+    .signup-form input::placeholder {
+      color: #ffffff51;
+      opacity: 1;
     }
     .signup-form button {
       width: 100%;
@@ -163,6 +229,7 @@
       background: radial-gradient(circle, #1F7960 0%, #192B3E 100%);
       color: #FFFFFF;
       min-height: 500px;
+      margin-bottom: 0;
     }
     .section.how-it-works .section-title {
       text-align: center;
@@ -325,15 +392,15 @@
       border-bottom: 1px solid #E5E5E5;
     }
     footer {
-      background: #F9F9F9;
-      color: #000000;
+      background: #113d65;
+      color: #fff;
       text-align: center;
       padding: 2rem 0 1rem 0;
       margin-top: 3rem;
-      border-radius: 16px 16px 0 0;
+      border-radius: -16px -16px 0 0;
     }
     .footer-links a {
-      color: #000000;
+      color: #fff;
       margin: 0 1rem;
       text-decoration: underline;
       font-weight: 600;
@@ -519,12 +586,12 @@
       flex-direction: column;
       justify-content: center;
       align-items: flex-start;
-      gap: 1.5rem;
+      gap: 1rem;
     }
     .feature-section-title {
       font-size: 2.5rem;
       font-weight: 700;
-      color: #222;
+      color: #113d65;
       margin-bottom: 0.5rem;
       line-height: 1.2;
     }
@@ -532,14 +599,14 @@
       color: #444;
       font-size: 1.15rem;
       line-height: 1.7;
-      max-width: 28rem;
+      max-width: 40rem;
     }
     .feature-section-right {
       flex: 1 1 40%;
       display: grid;
       grid-template-columns: repeat(2, 0fr);
-      column-gap: 8px;
-      row-gap: 8px;
+      column-gap: 24px;
+      row-gap: 24px;
       align-items: left;
       justify-items: left;
     }
@@ -551,8 +618,8 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      width: 160px;
-      height: 160px;
+      width: 200px;
+      height: 200px;
       min-width: 0;
       min-height: 0;
       transition: transform 0.18s cubic-bezier(.4,2,.6,1), box-shadow 0.18s;
@@ -560,13 +627,13 @@
     }
     .feature-card:hover {
       transform: scale(1.045);
-      box-shadow: 0 12px 32px #132d4630;
+      box-shadow: 0 12px 32px #006a4c63;
       z-index: 2;
     }
     .feature-card .feature-icon {
       width: 48px;
       height: 48px;
-      background: #111;
+      background: #1F7960;
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -587,6 +654,14 @@
       color: #222;
       text-align: center;
       margin-top: 0.5rem;
+    }
+    .feature-card-desc {
+      font-size: 0.97rem;
+      color: #444;
+      font-weight: 400;
+      text-align: center;
+      margin-top: 0.3rem;
+      line-height: 1.5;
     }
     @media (max-width: 1000px) {
       .feature-section-right {
@@ -611,23 +686,175 @@
         min-height: 0;
       }
     }
+    .feature-section-right .feature-card:nth-child(2),
+    .feature-section-right .feature-card:nth-child(4) {
+      transform: translateY(30px);
+    }
+    .feature-section-right .feature-card:nth-child(2):hover,
+    .feature-section-right .feature-card:nth-child(4):hover {
+      transform: translateY(30px) scale(1.045);
+    }
+    .feature-section-right .feature-card:hover:not(:nth-child(2)):not(:nth-child(4)) {
+      transform: scale(1.045);
+    }
+    .referral-leaderboard-section {
+      display: flex;
+      gap: 48px;
+      max-width: 1200px;
+      margin: 0 auto 2.5rem auto;
+      padding: 2.5rem 0;
+      align-items: flex-start;
+    }
+    .leaderboard-col {
+      flex: 1 1 320px;
+      background: 
+        radial-gradient(circle at 25% 20%, #1F7960 0%, rgba(10,45,78,0.95) 70%),
+        rgb(10, 45, 78);
+      border-radius: 8px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2), 0 8px 32px #01c38c44;
+      padding: 2rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      min-width: 0;
+      border: 1px solid rgba(255,255,255,0.13);
+      position: relative;
+      overflow: hidden;
+    }
+    .leaderboard-col::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(255,255,255,0.07);
+      pointer-events: none;
+      z-index: 0;
+      border-radius: 8px;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+    .leaderboard-title, .leaderboard-list, .leaderboard-list li, .leaderboard-number {
+      position: relative;
+      z-index: 1;
+      color: #fff;
+    }
+    .leaderboard-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .leaderboard-title .trophy-icon {
+      width: 1.5em;
+      height: 1.5em;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .leaderboard-title .trophy-icon svg {
+      width: 100%;
+      height: 100%;
+      stroke: #fff;
+      fill: none;
+      stroke-width: 2;
+      display: block;
+    }
+    .leaderboard-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      text-align: left;
+    }
+    .leaderboard-list li {
+      font-size: 1.08rem;
+      font-weight: 500;
+      padding: 0.7rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.18);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      width: 100%;
+      text-align: left;
+    }
+    .leaderboard-list li:last-child {
+      border-bottom: none;
+    }
+    .leaderboard-number {
+      width: 32px;
+      height: 32px;
+      background: #113d65;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .referral-col {
+      flex: 1 1 480px;
+      background: transparent;
+      max-width: 400px;
+      padding: 0 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      min-width: 0;
+      box-shadow: none;
+      border-radius: 0;
+    }
+    .referral-title {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1F7960;
+      margin-bottom: 0.5rem;
+      line-height: 1.2;
+    }
+    .referral-desc {
+      color: #444;
+      font-size: 1.15rem;
+      line-height: 1.7;
+      max-width: 40rem;
+    }
+    @media (max-width: 900px) {
+      .referral-leaderboard-section {
+        flex-direction: column;
+        gap: 24px;
+        padding: 1.2rem 0;
+      }
+      .leaderboard-col, .referral-col {
+        padding: 1.2rem 0.7rem;
+      }
+    }
   </style>
 </head>
 <body>
   <header>
     <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 0 2rem;">
-      <div class="logo">Uzor</div>
+      <div class="logo">
+        <img src="assets/uzor-logo.svg" alt="Uzor logo" />
+        Uzor
+      </div>
       <nav style="margin-right: 5%;">
-        <a href="#signup">Join Waitlist</a>
+        <a href="#hero">Home</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#features">Wins</a>
+        <a href="#referral">Referrals</a>
+        <a href="#signup" class="cta-button">Join Waitlist</a>
       </nav>
     </div>
   </header>
 
-  <section class="hero">
+  <section class="hero" id="hero">
+    <div class="gradient-blur"></div>
+    <div class="gradient-blur top-right"></div>
     <div class="hero-content">
-      <div class="hero-title">Founders Circle Waitlist</div>
+      <div class="hero-title">Turn Business Chaos Into Clarity</div>
       <div class="hero-desc">
-        Join the Uzor Founders Circle and get early access, exclusive perks, and a chance to win rewards by inviting friends. Be part of the next wave of business innovation!
+        Join the Uzor Founders Circle and get one year of free access to our platform,built to help you track sales, manage inventory, and grow with confidence.
       </div>
     </div>
     <div class="form-card">
@@ -643,7 +870,7 @@
     </div>
   </section>
 
-  <section class="section how-it-works">
+  <section class="section how-it-works" id="how-it-works">
     <div class="section-title">How It Works</div>
     <div class="how-steps">
       <div class="how-step">
@@ -677,11 +904,13 @@
     </div>
   </section>
 
-  <section class="feature-section">
+  <section class="feature-section" id="features">
     <div class="feature-section-left">
       <div class="feature-section-title">What You'll Get</div>
       <div class="feature-section-desc">
-        Joining the Uzor Founders Circle means you're not just getting early access — you're unlocking coaching, rewards, and a growing network that's built for real growth.
+      <br>As a participant in the <b>Uzor Founders Circle</b>, you will receive full access to our platform for <b>one year</b>, <b>free of charge</b>, along with tailored business support. <br>
+      <br>This initiative is designed to help selected business owners streamline their operations, track their sales more effectively, and build a stronger foundation for growth. <br>
+      <br>Here are the <b>benefits included</b> in the program: <br>
       </div>
     </div>
     <div class="feature-section-right">
@@ -690,46 +919,57 @@
           <!-- Early access icon (placeholder: clock) -->
           <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
         </div>
-        <div class="feature-card-label">Early access to Uzor</div>
+        <div class="feature-card-label">1 Year Free Access</div>
+        <div class="feature-card-desc">Full access to all Uzor features at no cost for 12 months.</div>
       </div>
       <div class="feature-card">
         <div class="feature-icon">
           <!-- Founder perks icon (placeholder: star) -->
           <svg viewBox="0 0 24 24"><polygon points="12 2 15 8.5 22 9.3 17 14.1 18.2 21 12 17.8 5.8 21 7 14.1 2 9.3 9 8.5 12 2"/></svg>
         </div>
-        <div class="feature-card-label">Exclusive founder perks</div>
+        <div class="feature-card-label">1-on-1 Business Coaching</div>
+        <div class="feature-card-desc">Four personalized sessions to help you organize and grow your business.</div>
       </div>
       <div class="feature-card">
         <div class="feature-icon">
           <!-- Rewards icon (placeholder: gift) -->
           <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="13" rx="2"/><path d="M12 7V21"/><path d="M2 11h20"/><path d="M7 7V4a2 2 0 1 1 4 0v3"/><path d="M17 7V4a2 2 0 1 0-4 0v3"/></svg>
         </div>
-        <div class="feature-card-label">Chance to win rewards</div>
+        <div class="feature-card-label">Early Feature Access</div>
+        <div class="feature-card-desc">Be the first to try and benefit from Uzor's newest tools and updates.</div>
       </div>
       <div class="feature-card">
         <div class="feature-icon">
           <!-- Community icon (placeholder: users) -->
           <svg viewBox="0 0 24 24"><circle cx="7" cy="10" r="4"/><circle cx="17" cy="10" r="4"/><path d="M7 14a7 7 0 0 0 10 0"/></svg>
         </div>
-        <div class="feature-card-label">Be part of a business community</div>
+        <div class="feature-card-label">Recognition as Founding Partner</div>
+        <div class="feature-card-desc">Your business will be publicly recognized as a trusted early user of Uzor.</div>
       </div>
     </div>
   </section>
 
-  <section class="section">
-    <div class="section-title">The Referral Mechanic</div>
-    <div class="referral-explanation">
-      Share your unique link after signing up. For every friend who joins using your link, you climb the leaderboard and increase your chances of winning exclusive rewards!
+  <section class="referral-leaderboard-section" id="referral">
+    <div class="leaderboard-col">
+      <div class="leaderboard-title">
+        <span class="trophy-icon">
+          <img src="assets/trophy-bold.svg" alt="Trophy icon" style="width:100%;height:100%;filter:invert(1);display:block;" />
+        </span>
+        Leaderboard
+      </div>
+      <ul class="leaderboard-list">
+        <li><span class="leaderboard-number">1</span>Jane Doe</li>
+        <li><span class="leaderboard-number">2</span>John Smith</li>
+        <li><span class="leaderboard-number">3</span>Mary Lee</li>
+        <li><span class="leaderboard-number">4</span>George Dupont</li>
+        <li><span class="leaderboard-number">5</span>Alex Green</li>
+      </ul>
     </div>
-    <div class="leaderboard-preview">
-      <div style="font-weight:600; color:#2b6cb0; margin-bottom:0.7rem;">Leaderboard Preview</div>
-      <table>
-        <tr><th>Name</th><th>Referrals</th></tr>
-        <tr><td>Jane Doe</td><td>12</td></tr>
-        <tr><td>John Smith</td><td>9</td></tr>
-        <tr><td>Mary Lee</td><td>7</td></tr>
-        <tr><td>You?</td><td>--</td></tr>
-      </table>
+    <div class="referral-col">
+      <div class="referral-title">The Referral Mechanic</div>
+      <div class="referral-desc">
+        Share your unique link after signing up. For every friend who joins using your link, you climb the leaderboard and increase your chances of winning exclusive rewards!
+      </div>
     </div>
   </section>
 
