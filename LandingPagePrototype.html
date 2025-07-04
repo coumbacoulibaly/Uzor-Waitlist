@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Uzor Founders Circle – Join the Waitlist</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', Arial, sans-serif;
+      margin: 0;
+      background: #f8fafc;
+      color: #222;
+    }
+    header {
+      background: #fff;
+      border-bottom: 1px solid #eee;
+      padding: 1.5rem 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .logo {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: #2b6cb0;
+      letter-spacing: 1px;
+    }
+    nav a {
+      text-decoration: none;
+      color: #2b6cb0;
+      font-weight: 600;
+      margin-left: 2rem;
+      padding: 0.5rem 1.2rem;
+      border-radius: 4px;
+      background: #e6f0fa;
+      transition: background 0.2s;
+    }
+    nav a:hover {
+      background: #bee3f8;
+    }
+    .hero {
+      max-width: 900px;
+      margin: 2.5rem auto 1.5rem auto;
+      padding: 2rem;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 2px 12px rgba(44, 62, 80, 0.07);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 2rem;
+    }
+    .hero-content {
+      flex: 1 1 320px;
+    }
+    .hero-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #2b6cb0;
+      margin-bottom: 1rem;
+    }
+    .hero-desc {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      color: #444;
+    }
+    .signup-form {
+      background: #f1f5f9;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 1px 4px rgba(44, 62, 80, 0.04);
+      max-width: 340px;
+      margin: 0 auto;
+    }
+    .signup-form label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: #2b6cb0;
+    }
+    .signup-form input {
+      width: 100%;
+      padding: 0.7rem;
+      margin-bottom: 1rem;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+    .signup-form button {
+      width: 100%;
+      background: #2b6cb0;
+      color: #fff;
+      font-weight: 700;
+      border: none;
+      padding: 0.9rem;
+      border-radius: 6px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .signup-form button:hover {
+      background: #225ea8;
+    }
+    .section {
+      max-width: 900px;
+      margin: 2.5rem auto;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 2px 12px rgba(44, 62, 80, 0.07);
+      padding: 2rem;
+    }
+    .section-title {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #2b6cb0;
+      margin-bottom: 1.2rem;
+    }
+    .how-steps {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .how-step {
+      flex: 1 1 180px;
+      background: #e6f0fa;
+      border-radius: 10px;
+      padding: 1.2rem;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    .how-step span {
+      font-size: 2.2rem;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    .benefits-grid {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+    }
+    .benefit {
+      flex: 1 1 180px;
+      background: #f1f5f9;
+      border-radius: 10px;
+      padding: 1.2rem;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    .benefit span {
+      font-size: 2rem;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    .referral-explanation {
+      background: #e6f0fa;
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin: 2rem 0 0 0;
+      text-align: center;
+      font-size: 1.1rem;
+      color: #225ea8;
+    }
+    .leaderboard-preview {
+      margin-top: 2rem;
+      background: #f1f5f9;
+      border-radius: 10px;
+      padding: 1.5rem;
+    }
+    .leaderboard-preview table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .leaderboard-preview th, .leaderboard-preview td {
+      padding: 0.7rem 1rem;
+      text-align: left;
+    }
+    .leaderboard-preview th {
+      color: #2b6cb0;
+      font-weight: 700;
+      border-bottom: 2px solid #bee3f8;
+    }
+    .leaderboard-preview td {
+      border-bottom: 1px solid #e2e8f0;
+    }
+    footer {
+      background: #2b6cb0;
+      color: #fff;
+      text-align: center;
+      padding: 2rem 0 1rem 0;
+      margin-top: 3rem;
+      border-radius: 16px 16px 0 0;
+    }
+    .footer-links a {
+      color: #fff;
+      margin: 0 1rem;
+      text-decoration: underline;
+      font-weight: 600;
+    }
+    @media (max-width: 700px) {
+      .hero, .section {
+        padding: 1rem;
+      }
+      .how-steps, .benefits-grid {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      header, .hero, .section {
+        max-width: 98vw;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Uzor</div>
+    <nav>
+      <a href="#signup">Join Waitlist</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-title">Founders Circle Waitlist</div>
+      <div class="hero-desc">
+        Join the Uzor Founders Circle and get early access, exclusive perks, and a chance to win rewards by inviting friends. Be part of the next wave of business innovation!
+      </div>
+    </div>
+    <form class="signup-form" id="signup">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" placeholder="Your Name" required>
+      <label for="business">Business Name</label>
+      <input type="text" id="business" name="business" placeholder="Your Business" required>
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" placeholder="you@email.com" required>
+      <button type="submit">Join the Waitlist</button>
+    </form>
+  </section>
+
+  <section class="section">
+    <div class="section-title">How It Works</div>
+    <div class="how-steps">
+      <div class="how-step"><span>1️⃣</span>Sign up with your details</div>
+      <div class="how-step"><span>2️⃣</span>Get your unique referral link</div>
+      <div class="how-step"><span>3️⃣</span>Invite friends &amp; colleagues</div>
+      <div class="how-step"><span>4️⃣</span>Climb the leaderboard &amp; unlock rewards</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-title">What You'll Get</div>
+    <div class="benefits-grid">
+      <div class="benefit"><span>🎁</span>Early access to Uzor</div>
+      <div class="benefit"><span>🚀</span>Exclusive founder perks</div>
+      <div class="benefit"><span>🏆</span>Chance to win rewards</div>
+      <div class="benefit"><span>🤝</span>Be part of a business community</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-title">The Referral Mechanic</div>
+    <div class="referral-explanation">
+      Share your unique link after signing up. For every friend who joins using your link, you climb the leaderboard and increase your chances of winning exclusive rewards!
+    </div>
+    <div class="leaderboard-preview">
+      <div style="font-weight:600; color:#2b6cb0; margin-bottom:0.7rem;">Leaderboard Preview</div>
+      <table>
+        <tr><th>Name</th><th>Referrals</th></tr>
+        <tr><td>Jane Doe</td><td>12</td></tr>
+        <tr><td>John Smith</td><td>9</td></tr>
+        <tr><td>Mary Lee</td><td>7</td></tr>
+        <tr><td>You?</td><td>--</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-links">
+      <a href="#">Twitter</a> |
+      <a href="#">LinkedIn</a> |
+      <a href="#">Privacy Policy</a>
+    </div>
+    <div style="margin-top:1rem; font-size:0.95rem;">&copy; 2024 Uzor. All rights reserved.</div>
+  </footer>
+</body>
+</html> 
