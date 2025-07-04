@@ -1,0 +1,133 @@
+{
+  "design_system": {
+    "brand": {
+      "name": "Investo",
+      "tone": "modern, trustworthy, tech-forward",
+      "visual_language": "clean, soft minimalism with high contrast CTA elements"
+    },
+    "layout": {
+      "max_width": "1200px",
+      "grid_system": "12-column responsive grid",
+      "section_spacing": "80px vertical padding",
+      "content_alignment": "centered for text blocks, split for feature rows",
+      "container_padding": "24px"
+    },
+    "color_palette": {
+      "primary": "#000000",
+      "accent": "#C6FF00",
+      "background": "#FFFFFF",
+      "gray_light": "#F9F9F9",
+      "gray_medium": "#E5E5E5",
+      "gray_dark": "#666666",
+      "text": "#222222",
+      "cta_get_started": "#C6FF00",
+      "cta_secondary": "#7165E3"
+    },
+    "typography": {
+      "font_family": "'Inter', sans-serif",
+      "heading_font_weight": "700",
+      "body_font_weight": "400",
+      "heading_line_height": "1.2",
+      "body_line_height": "1.6",
+      "sizes": {
+        "h1": "48px",
+        "h2": "36px",
+        "h3": "28px",
+        "body_large": "18px",
+        "body": "16px",
+        "caption": "14px"
+      }
+    },
+    "components": {
+      "navbar": {
+        "background": "transparent",
+        "position": "sticky top",
+        "items": ["Home", "About", "Services", "Pricing", "Contact"],
+        "cta_button": {
+          "text": "Download App",
+          "style": "pill",
+          "color": "#C6FF00"
+        }
+      },
+      "hero_section": {
+        "layout": "centered",
+        "headline": "large bold text",
+        "subheadline": "medium-light description",
+        "cta_buttons": [
+          { "text": "Get Started", "variant": "filled", "color": "#C6FF00" },
+          { "text": "Request a Demo", "variant": "outlined", "color": "#7165E3" }
+        ],
+        "device_mockup": "centered with stat overlays"
+      },
+      "logos_section": {
+        "background": "#FFFFFF",
+        "logos": "grayscale, evenly spaced",
+        "trust_statement": "Trusted by Over 5,500+ Industry Leaders"
+      },
+      "features_section": {
+        "layout": "2-column split",
+        "left": "text with bullet points",
+        "right": "phone mockup with feature highlight",
+        "icon_bullets": true
+      },
+      "benefits_section": {
+        "headline": "Transforming Transactions, One Click at a Time",
+        "feature_grid": "2-3 cards with icon, title, description"
+      },
+      "faq_section": {
+        "layout": "2-column",
+        "left": "email contact + title",
+        "right": "accordion list",
+        "interaction": "click to expand"
+      },
+      "testimonial_stats_section": {
+        "cards": [
+          { "icon": "user group", "stat": "120K+", "desc": "Trusted Users" },
+          { "icon": "star", "stat": "4.9", "desc": "App Store Rating" },
+          { "icon": "globe", "stat": "89+", "desc": "Countries Served" }
+        ]
+      },
+      "download_section": {
+        "background": "dark gradient",
+        "text": "light",
+        "cta_buttons": [
+          { "platform": "Google Play", "style": "badge" },
+          { "platform": "App Store", "style": "badge" }
+        ]
+      },
+      "footer": {
+        "background": "#F9F9F9",
+        "columns": 4,
+        "newsletter": true,
+        "social_links": ["Facebook", "Twitter", "LinkedIn", "YouTube"]
+      }
+    },
+    "shadows": {
+      "card": "0 4px 24px rgba(0,0,0,0.05)",
+      "floating_ui": "0 8px 32px rgba(0,0,0,0.08)"
+    },
+    "border_radius": {
+      "buttons": "999px",
+      "cards": "16px",
+      "inputs": "12px"
+    },
+    "icons": {
+      "style": "minimal line icons",
+      "positioning": "inline with labels or top-centered"
+    },
+    "mobile_responsiveness": {
+      "breakpoints": {
+        "sm": "640px",
+        "md": "768px",
+        "lg": "1024px",
+        "xl": "1280px"
+      },
+      "layout_adjustments": {
+        "nav": "collapses into hamburger",
+        "grid": "single-column stack",
+        "text": "centered alignment",
+        "spacing": "reduced padding"
+      }
+    }
+  }
+} 
